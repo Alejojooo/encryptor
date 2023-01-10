@@ -1,0 +1,15 @@
+:root {
+    --bg-color: #1e1e24;
+    --main-color: #1c1c21;
+    --border-color: #2b3354;
+    --shadow-color: #171a2c;
+    --hover-color: #2d2f39;
+    --hover-secondary-color: #4a4ad3;
+    --emphasis-color: #6161ff;
+    --inactive-color: #7a7d90;
+    --textarea-color: #c2c2f0;
+    --textarea-bg-color: #3838c9;
+    --placeholder-color: #61618f;
+    --textarea-secondary-color: #e3e4e8;
+    --text-color: #e3e4e8;
+}

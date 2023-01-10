@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encriptador de texto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="img/data-encryption.ico" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/light.css" />
+</head>
+
+<body>
+  <header>
+    <img src="./img/data-encryption.png">
+    <h1 id="encrypter-header">Encriptador de texto</h1>
+    <h2 id="explanation-header">¿Cómo funciona?</h2>
+    <button id="explanation-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-lg"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z" />
+      </svg>
+    </button>
+    <button id="toggle-mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill"
+        viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <div class="encrypter-container">
+      <div class="main-container">
+        <div class="side-container">
+          <div class="title-container">
+            <button id="encrypt-button">
+              <span>Encriptar</span>
+            </button>
+            <button id="decrypt-button">
+              <span>Desencriptar</span>
+            </button>
+          </div>
+          <div class="input-area">
+            <textarea id="user-input" placeholder="Escribe el texto aquí."></textarea>
+            <div id="cross-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                viewBox="0 0 16 16">
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="side-container">
+          <div class="title-container">
+            <div class="output-title">
+              <span>Resultado</span>
+            </div>
+          </div>
+          <div class="output-area">
+            <textarea id="output-text" readonly></textarea>
+            <div id="copy-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard"
+                viewBox="0 0 16 16">
+                <path
+                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                <path
+                  d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+              </svg>
+            </div>
+            <div id="check-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                <path
+                  d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                <path
+                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="advice">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+          <path
+            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+        </svg>
+        <span>Solo letras minúsculas y sin acentos</span>
+      </div>
+    </div>
+
+    <div class="explanation-container">
+      <p>Esta aplicación te permite encriptar y desencriptar mensajes a través de claves sencillas.</p>
+      <p>Las claves utilizadas son las siguientes:</p>
+      <ul>
+        <li>La letra <span>a</span> es convertida a <span>ai</span>.</li>
+        <li>La letra <span>e</span> es convertida a <span>enter</span>.</li>
+        <li>La letra <span>i</span> es convertida a <span>imes</span>.</li>
+        <li>La letra <span>o</span> es convertida a <span>ober</span>.</li>
+        <li>La letra <span>u</span> es convertida a <span>ufat</span>.</li>
+      </ul>
+      <p>Para empezar a utilizar el encriptador, elige una de las funciones y empieza a escribir tu mensaje. Cuando tengas algo escrito, aparecerán botones para copiar el resultado o para limpiar el cuadro de entrada de texto.</p>
+    </div>
+
+  </main>
+
+  <script src="./encrypter.js"></script>
+  <script src="./description.js"></script>
+
+  <footer>
+    <p>Desarrollado por <a href="https://github.com/Alejojooo" target="_blank">Alejandro Fernández</a>.</p>
+    <p>Diseño inspirado en <a href="https://www.deepl.com/translator" target="_blank">DeepL</a> y <a
+        href="https://translate.google.com" target="_blank">Google Translator</a>.</p>
+    <p>Ícono del encabezado creado por
+      <a href="https://www.flaticon.com/free-icons/encryption" title="encryption icons" target="_blank">Freepik -
+        Flaticon</a>.
+    </p>
+    <p>Íconos en formato SVG obtenidos de <a href="https://icons.getbootstrap.com" target="_blank">Bootstrap
+        Icons</a>.</p>
+    <p>Repositorio del proyecto <a href="https://github.com/Alejojooo/text-encryptor" target="_blank">aquí</a>.</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+:root {
+    --x-small-font-size: 0.75rem;
+    --small-font-size: 0.875rem;
+    --large-font-size: 1.125rem;
+    --xx-large-font-size: 1.5rem;
+}
+
+body,
+button,
+textarea,
+textarea::placeholder {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15vw;
+    height: 5vh;
+    min-height: 2.5rem;
+}
+
+header h1,
+header h2 {
+    cursor: pointer;
+    margin-right: 1.875rem;
+}
+
+#explanation-header {
+    align-self: flex-end;
+    margin-bottom: 0.75rem;
+}
+
+header img {
+    height: 100%;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: calc(1.125rem + 1vw);
+}
+
+header h2 {
+    font-weight: bold;
+    font-size: calc(0.5rem + 0.5vw);
+}
+
+#explanation-button {
+    display: none;
+}
+
+header button {
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 80%;
+    width: auto;
+    padding: 5px;
+    margin-left: auto;
+}
+
+header button svg {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    display: grid;
+    height: 70vh;
+    min-height: 580px;
+    padding-top: 30px;
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.encrypter-container,
+.explanation-container {
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.encrypter-container {
+    position: relative;
+    left: 0;
+    transition: left 1000ms ease-in-out, background 1000ms ease-in-out;
+}
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 100%;
+    height: 80%;
+}
+
+.side-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+.title-container {
+    display: flex;
+    height: 4rem;
+    padding: 0 30px;
+}
+
+button,
+.output-title {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 10px;
+    height: 100%;
+    background: none;
+    border: none;
+    border-width: 3px;
+    font-weight: bold;
+    font-size: var(--large-font-size);
+    text-align: center;
+    transition: border-bottom 75ms ease-in-out, color 75ms ease-in-out;
+}
+
+.input-area {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom-left-radius: 15px;
+    width: 100%;
+    height: calc(100% - 4rem);
+    padding: 30px;
+    transition: border 75ms ease-out;
+}
+
+textarea {
+    font-size: var(--xx-large-font-size);
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    width: 85%;
+    resize: none;
+    outline: 0;
+    height: 100%;
+}
+
+.output-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: none;
+}
+
+.output-area {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 4rem);
+    padding: 30px;
+}
+
+#cross-icon,
+#copy-icon,
+#check-icon {
+    box-sizing: border-box;
+    height: calc(var(--large-font-size) * 2);
+    width: calc(var(--large-font-size) * 2);
+    display: none;
+    border-radius: 0.5rem;
+}
+
+#copy-icon,
+#check-icon {
+    padding: 6px;
+}
+
+#check-icon {
+    display: none;
+}
+
+.side-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.advice {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+    margin-top: 1.125rem;
+    font-size: var(--small-font-size);
+}
+
+.advice svg {
+    height: var(--small-font-size);
+    width: var(--small-font-size);
+    margin-right: 0.5rem;
+}
+
+.explanation-container {
+    box-sizing: border-box;
+    font-size: var(--large-font-size);
+    padding-top: 30px;
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.explanation-container p,
+.explanation-container li {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.explanation-container ul {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.explanation-container span {
+    font-weight: bold;
+}
+
+footer {
+    height: fit-content;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+footer p {
+    font-size: var(--x-small-font-size);
+    padding-bottom: calc(var(--x-small-font-size) / 2);
+}
+
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media screen and (max-width:1440px) {
+    header h2 {
+        font-size: calc(0.75rem + 0.5vw);
+    }
+}
+
+@media screen and (max-width:1024px) {
+    header {
+        transition: padding 100ms ease-out;
+        padding: 10px 5vw;
+    }
+
+    main {
+        transition: padding 100ms ease-out;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-container {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    textarea {
+        font-size: var(--large-font-size);
+    }
+}
+
+@media screen and (max-width:720px) {
+    #explanation-header {
+        display: none;
+    }
+
+    #explanation-button {
+        display: inline-block;
+    }
+
+    header button:last-child {
+        margin-left: 1rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        height: 40%;
+        transition: height 250ms ease-in-out;
+    }
+
+    .side-container {
+        width: 100%;
+    }
+
+    .side-container:last-child,
+    .side-container:last-child .title-container {
+        display: none;
+    }
+
+    .title-container {
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    .input-area {
+        box-sizing: border-box;
+        border-right: none;
+        border-bottom-left-radius: 0;
+    }
+
+    .output-area {
+        box-sizing: border-box;
+        border-top: none;
+        height: 100%;
+    }
+
+    .explanation-container {
+        font-size: 1rem;
+    }
+
+    .explanation-container p {
+        text-align: justify;
+    }
+
+    footer p {
+        font-size: var(--small-font-size);
+        padding-bottom: var(--small-font-size);
+    }
+}
+
+@media screen and (max-width:380px) {
+    header h1 {
+        font-size: calc(1rem + 1vw);
+    }
+}
