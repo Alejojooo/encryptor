@@ -32,10 +32,6 @@ main {
     background-color: var(--bg-color);
 }
 
-.encrypter-container {
-    background-color: var(--bg-color);
-}
-
 .main-container {
     background-color: var(--main-color);
     border: 1px solid var(--border-color);

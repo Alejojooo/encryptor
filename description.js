@@ -7,13 +7,12 @@ const explanationDiv = document.getElementsByClassName('explanation-container')[
 
 function hideEncrypter() {
     encrypterDiv.style.left = '-101vw';
-    encrypterDiv.style.backgroundColor = 'transparent';
+    explanationDiv.style.opacity = '1';
 }
 
 function showEncrypter() {
-    let bgColor = getComputedStyle(encrypterDiv).getPropertyValue('--bg-color');
     encrypterDiv.style.left = '0';
-    encrypterDiv.style.backgroundColor = bgColor;
+    explanationDiv.style.opacity = '0';
 }
 
 encrypterHeader.onclick = showEncrypter;

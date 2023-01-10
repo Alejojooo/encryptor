@@ -85,7 +85,7 @@ main {
 .encrypter-container {
     position: relative;
     left: 0;
-    transition: left 1000ms ease-in-out, background 1000ms ease-in-out;
+    transition: left 1000ms ease-in-out;
 }
 
 .main-container {
@@ -207,11 +207,13 @@ textarea {
 }
 
 .explanation-container {
+    opacity: 0;
     box-sizing: border-box;
     font-size: var(--large-font-size);
     padding-top: 30px;
     padding-left: 15vw;
     padding-right: 15vw;
+    transition: opacity 500ms ease-in-out;
 }
 
 .explanation-container p,
